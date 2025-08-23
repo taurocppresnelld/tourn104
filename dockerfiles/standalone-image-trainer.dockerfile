@@ -14,13 +14,20 @@ RUN pip install aiohttp pydantic requests toml \
 RUN mkdir -p /dataset/configs \
     /dataset/outputs \
     /dataset/images \
+    /workspace/axolotl \
+    /workspace/axolotl/configs \
     /workspace/scripts \
     /workspace/core
+
+ENV CONFIG_DIR="/dataset/configs"
+ENV OUTPUT_DIR="/dataset/outputs"
+ENV DATASET_DIR="/dataset/images"
 
 COPY core /workspace/core
 COPY miner /workspace/miner
 COPY trainer /workspace/trainer
 COPY scripts /workspace/scripts
+COPY core/config/* /workspace/axolotl/
 
 RUN chmod +x /workspace/scripts/run_image_trainer.sh
 RUN chmod +x /workspace/scripts/image_trainer.py
