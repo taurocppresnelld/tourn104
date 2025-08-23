@@ -12,7 +12,7 @@ IMAGE_TASKS_HF_SUBFOLDER_PATH = "checkpoints"
 # Dynamic resource allocation based on GPU count
 # For 8xH100 with 1440GB RAM and 252 CPUs
 MEMORY_PER_GPU_GB = 110  # ~61% of 1440GB / 8 GPUs
-CPUS_PER_GPU = 24  # Conservative allocation leaving headroom
+CPUS_PER_GPU = 22  # Conservative allocation leaving headroom
 
 CACHE_CLEANUP_CUTOFF_HOURS = 12
 STALE_TASK_GRACE_MINUTES = 10
